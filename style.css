@@ -19,7 +19,11 @@
 
 * { box-sizing: border-box; }
 
-html { background: var(--nord-0); }
+html {
+    background: var(--nord-0);
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+}
 
 body {
     position: relative;
@@ -89,7 +93,6 @@ nav ul { display: flex; gap: 18px; align-items: center; margin: 0; padding: 0; l
 nav a { color: var(--nord-9); font-size: 0.78rem; text-decoration: none; }
 nav a::before { color: var(--nord-3); content: './'; }
 nav a:hover, nav a[aria-current='page'] { color: var(--nord-6); }
-nav a[aria-current='page']::after { color: var(--nord-7); content: ' _'; }
 
 main { flex: 1; padding: 72px 0; }
 
@@ -162,7 +165,7 @@ li::marker { color: var(--nord-7); font-family: var(--mono); }
 .career-diagram {
     min-height: 570px;
     margin-top: 46px;
-    padding-left: 54px;
+    padding-left: 0;
 }
 
 .career-diagram::before { display: none; }
@@ -171,7 +174,7 @@ li::marker { color: var(--nord-7); font-family: var(--mono); }
     position: absolute;
     top: 8px;
     bottom: 22px;
-    left: 19px;
+    left: -35px;
     width: 2px;
     background: linear-gradient(to top, var(--nord-3), var(--nord-8));
 }
@@ -207,7 +210,7 @@ li::marker { color: var(--nord-7); font-family: var(--mono); }
 .career-marker {
     position: absolute;
     top: 24px;
-    left: -43px;
+    left: -41px;
     width: 13px;
     height: 13px;
     border: 3px solid var(--nord-0);
@@ -246,6 +249,21 @@ li::marker { color: var(--nord-7); font-family: var(--mono); }
 .career-card p { margin: 0; }
 .career-card .career-meta { margin-bottom: 6px; color: var(--nord-7); font-family: var(--mono); font-size: 0.7rem; text-transform: uppercase; }
 
+.blog-directory-card {
+    max-width: 620px;
+    margin: 42px 0 0;
+    padding: 22px 24px;
+    border: 1px solid var(--nord-3);
+    background: rgba(59, 66, 82, 0.36);
+}
+.blog-directory-card::before { display: none; }
+.folder-tree { margin: 0; color: var(--nord-9); font-family: var(--mono); font-size: 0.8rem; line-height: 1.8; white-space: pre-wrap; }
+.post-status { color: var(--nord-yellow); font-size: 0.7rem; }
+.blog-note { margin-top: 22px; color: var(--nord-9); font-family: var(--mono); font-size: 0.7rem; }
+
+.blog-post h1 { font-size: clamp(2rem, 6vw, 3.6rem); }
+.blog-post h2 { font-size: clamp(1.45rem, 3.5vw, 2rem); }
+
 footer { padding: 20px 0 28px; border-top: 1px solid var(--nord-3); color: var(--nord-9); font-size: 0.72rem; }
 footer a:first-child::before { color: var(--nord-3); content: '// '; }
 button { padding: 10px 15px; border: none; border-radius: 5px; color: var(--nord-6); background-color: var(--nord-10); cursor: pointer; }
@@ -264,6 +282,6 @@ img { display: block; width: 200px; margin: auto; border-radius: 100px; box-shad
     .hero-photo { width: min(196px, 65vw); justify-self: center; }
     .career-diagram { min-height: 0; margin-top: 34px; padding-left: 42px; }
     .career-axis { left: 15px; }
-    .career-marker { left: -34px; }
+    .career-marker { left: -32px; }
     .career-card::before { left: -14px; width: 14px; }
 }
